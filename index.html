@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" id="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery.js"></script>
+    <script src="js/flip.js"></script>
+    <script src="js/style.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Periodic Lapse</title>
+</head>
+
+<body id= "full">
+        <div id="winner">
+            </div>
+    <div id = 'background'>
+    </div>
+        <div id = 'start'>
+            <h2 id="name">Periodic Memory</h2>
+            <select id="image-number">
+                <option value="3" selected="selected">easy</option>
+                <option value="6">medium</option>
+                <option value="12">abstract</option>
+            </select>
+            <button id="start-button">START</button>
+        </div>
+        <div id='red-score'>
+            <span id="red">Red:</span>
+            <span id="red-board">0</span>
+        </div>
+        <div id='turn'></div>
+        <div id ='game'>
+            <div id="who-turn"></div>
+            <div id='cards'></div>
+            <button onClick='location.reload()' id ='buttonRefresher'>Re-Start</button>
+        </div>
+        <div id='blue-score'>
+            <span id="blue">Blue:</span>
+            <span id="blue-board">0</span>
+        
+        
+
+        </div>
+</body>
+
+</html>
