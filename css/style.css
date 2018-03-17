@@ -57,7 +57,7 @@ html, body{
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    margin: 10.8px 0 0 53   0px;
+    margin: 10.8px 0 0 540px;
 }
 #buttonRefresh:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -145,7 +145,26 @@ html, body{
     background-color: white;
 }
 
-
+.class3{
+    height: 180px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 0 0 0px;
+}
+.class6{
+    height: 155px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.class12{
+    height: 115px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.name{
+    border-top: 1px solid black;
+    text-align: center;
+}
 
 .card {
     width: 100px;
@@ -183,7 +202,7 @@ html, body{
 .er3{
     width: 181.95px;
     height: auto;
-    margin: 30px 30px 50px 30px;
+    margin: 30px 30px 30px 30px;
 }
 .er6{
     width: 161.95px;
@@ -200,6 +219,7 @@ html, body{
 }
 img{
     vertical-align: top;
+    margin: 0 0 20% 15%;
 }
 .er3 .front, .er3 .back{
     /* vertical-align: bottom; */
@@ -215,25 +235,25 @@ img{
     /* padding: 10px 0 0 0; */
     width: 70%;
     height: 70%;
-    margin: 10px 50px;
+    margin: 0px 50px;
     font-size: 22px;
     /* margin: 0 50px 0 0 ; */
 }
 
 .er12 .front, .er12 .back{
-    padding: 40px 0 0 0;
+    /* padding: 40px 0 0 0; */
     width: 100%;
     height: 100%;
-    margin: 2px 50px;
+    margin: 2px 60px;
 }
 #cards3{
-    margin: 8.5%  0 0 13.5%;
-}
-#cards6{
     margin: 3.5%  0 0 13.5%;
 }
+#cards6{
+    margin: 4%  0 0 13.5%;
+}
 #cards12{
-    margin: 0.5%  0 0 11.5%;
+    margin: 4.5%  0 0 7.5%;
 }
 .front{
     display: inline-block;

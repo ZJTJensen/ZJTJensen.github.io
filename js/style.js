@@ -11,6 +11,7 @@ $(document).ready(function(){
         
 
     $("#start-button").click(function(num){
+        //whos turn is it
         if(start == 1 || turn =="Blue"){
             turn = "Blue";
             document.getElementById('page').style ='background: linear-gradient(to bottom right, rgba(255, 0, 0, 0.405), blue); '
@@ -25,12 +26,14 @@ $(document).ready(function(){
         var val = document.getElementById('image-number');
         num = val.options[val.selectedIndex].value;
         document.getElementById("cards").id = "cards"+num;
+        //preping game field
         $("#start").hide();
         var temp = (Math.random() <= 0.5) ? 1 : 2;
         $("#game").slideToggle("slow", function(){});
         document.getElementById("red-score").style= "display:inline-block;"
         document.getElementById("blue-score").style= "display:inline-block;"
         document.getElementById("game").style= "display:inline-block;"
+        //randomize the card array
         function shuffleArray(arr){
             var currentIndex = arr.length, temporaryValue, randomIndex;
             // While there remain elements to shuffle...
@@ -45,6 +48,7 @@ $(document).ready(function(){
             }
             return arr;
         }
+        //creating the card array
         if(num == 3){
             map = ['gold','gold-el','silver','silver-el','nickel','nickel-el']
             map = shuffleArray(map);
@@ -55,10 +59,12 @@ $(document).ready(function(){
             map = ['gold','gold-el','silver','silver-el','nickel','nickel-el','copper','copper-el','iron','iron-el','zinc','zinc-el','mercury','mercury-el','oxygen','oxygen-el','plutonium','plutonium-el','potassium','potassium-el','radium','radium-el','tin','tin-el']
             map = shuffleArray(map);
         }
+        //creating the game field
         for(var i=0; i < map.length; i++){
            
             document.getElementById("cards"+num).innerHTML += 
-            "<div class='er"+ num+"'><div class='front'> <img style ='width: 70%; height: auto;' src ='imgs/play.jpg'></div> <div class='back'><div style='width: 70%; height: 100%;background-color:white;'><img style='width: 70%; height: auto;' class = 'img' alt='"+map[i]+"' src='imgs/gameCards/"+ map[i]+".jpg'><p>"+ map[i]+"</p></div></div></div>"
+            "<div class='er"+ num+"'><div class='front'> <img style ='width: 70%; height: auto;' src ='imgs/play.jpg'></div> <div class='back'><div class='class"+num+"' style='width: 70%;background-color:white;'><img style='width: 70%; height: auto;' class = 'img' alt='"+map[i]+"' src='imgs/gameCards/"+ map[i]+".jpg'><p class='name'>"+ map[i]+"</p></div></div></div>"
+            "<div class='er"+ num+"'></div>"
             if(num == 3 && i+1 == map.length/2){
                 document.getElementById("cards"+num).innerHTML += "</br>"
             }
@@ -77,6 +83,7 @@ $(document).ready(function(){
         var choices =[];
         var remove = [];
         var toFlip = true;
+        //flipping effect
         if(toFlip == true){
         $(".er"+num).flip();
         $(".er"+num).click(function(){
@@ -94,11 +101,12 @@ $(document).ready(function(){
                 // var img1 =choices[0].getElementsByClassName('img').alt
                 // var img2 =choices[0].getElementsByClassName('img').alt
                 if((choices[0].includes(choices[1]) && choices[0]!= choices[1])|| (choices[1].includes(choices[0]) && choices[1]!= choices[0])){
+                    choices = []
                     if(turn =="Red"){
-                        red++;
+                        red += 1;
                         document.getElementById('red-board').innerHTML = red;
                     }else{
-                        blue++;
+                        blue+=1;
                         document.getElementById('blue-board').innerHTML = blue;
                     }
                     console.log("Here it is")
@@ -112,7 +120,7 @@ $(document).ready(function(){
                     function hello(){
                     for (var j=0; j < divs.length; j++){
                         if (divs[j] == remove[0]||divs[j] == remove[1]){
-                            divs[j].style = "display:none;"
+                            divs[j].innerHTML = ''
                          }
                      }
                     }
@@ -144,7 +152,7 @@ $(document).ready(function(){
                         setTimeout(end, 1200)
                     }
                 }
-                    setTimeout(time, 1200)
+                    return setTimeout(time, 1200)
             }
         });
     }
